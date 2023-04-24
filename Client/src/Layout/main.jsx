@@ -1,13 +1,13 @@
-import { Children } from "react";
+
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-const MainLayout = ({Children}) => {
+const MainLayout = ({children}) => {
   return (  
     <main>
-      <Header />
-      <Banner />
-      {Children}
+      {/* <Header /> */}
+      {/* <Banner /> */}
+      {children}
       <Footer/>
     </main>
   );
