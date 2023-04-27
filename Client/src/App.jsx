@@ -5,16 +5,17 @@ import Landing from "./components/Landing/Index";
 import Status from "./components/stats";
 import OurTeams from "./components/Teams";
 import MainLayout from "./Layout/main";
+import { useTranslation } from "react-i18next";
 function App() {
   return (
     <>
-      <MainLayout>  
-        <Landing/>
-        <BlogsSection/>
-        <Status/>
-        <Aboutus/>
-        <OurTeams/>
-        <ContactSection/>
+      <MainLayout>
+        <Landing />
+        <BlogsSection />
+        <Status />
+        <Aboutus />
+        <OurTeams />
+        <ContactSection />
       </MainLayout>
     </>
   );
