@@ -5,7 +5,7 @@ import Header from "../components/Header";
 const MainLayout = ({children}) => {
   return (  
     <main>
-      {/* <Header /> */}
+      <Header />
       {/* <Banner /> */}
       {children}
       <Footer/>

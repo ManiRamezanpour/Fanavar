@@ -6,6 +6,7 @@ import Status from "./components/stats";
 import OurTeams from "./components/Teams";
 import MainLayout from "./Layout/main";
 import { useTranslation } from "react-i18next";
+import { Router } from "react-router-dom";
 function App() {
   return (
     <>
@@ -17,6 +18,9 @@ function App() {
         <OurTeams />
         <ContactSection />
       </MainLayout>
+      <Router>
+        Rout
+      </Router>
     </>
   );
 }

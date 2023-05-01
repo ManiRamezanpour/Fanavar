@@ -60,9 +60,9 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-transparent text-white px-4">
+    <header className="bg-transparent text-black px-4">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-2 "
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -74,16 +74,16 @@ const Header = () => {
         <div className="flex">
           <button
             type="button"
-            className="-m-2.5 cursor-pointer inline-flex text-white items-center justify-center rounded-md p-2.5"
-            onClick={setMobileMenuOpen(true)}
+            className="-m-2.5 lg:hidden cursor-pointer inline-flex text-black items-center justify-center rounded-md p-2.5"
+            onClick={() => setMobileMenuOpen(true)}
           >
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            {/* <Bars3Icon className="h-6 w-6" aria-hidden="true" /> */}
             {/* <span className="sr-only">Open main menu</span> */}
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <Popover.Button className="flex items-center gap-x-1 text-xl font-semibold leading-6 text-black">
               Product
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -101,11 +101,11 @@ const Header = () => {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
+                <div className="p-4 text-black">
                   {products.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-xl leading-6 hover:bg-gray-50"
                     >
                       <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                         <item.icon
@@ -116,7 +116,7 @@ const Header = () => {
                       <div className="flex-auto">
                         <a
                           href={item.href}
-                          className="block font-semibold text-gray-900"
+                          className="block font-semibold text-black"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
@@ -126,12 +126,12 @@ const Header = () => {
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                <div className="grid text-black grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                   {callsToAction.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                      className="flex items-center justify-center gap-x-2.5 p-3 text-xl font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                     >
                       <item.icon
                         className="h-5 w-5 flex-none text-gray-400"
@@ -145,27 +145,29 @@ const Header = () => {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#" className="text-xl font-semibold leading-6 text-black">
             Features
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#" className="text-xl font-semibold leading-6 text-black">
             Marketplace
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#" className="text-xl font-semibold leading-6 text-black">
             Company
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
+          <a href="#" className="text-sm font-semibold leading-6 text-black">
+            {/* Log in <span aria-hidden="true">&rarr;</span> */}
           </a>
+          <LanguageController />
         </div>
       </nav>
+
       <Dialog
         as="div"
         className="lg:hidden"
         open={mobileMenuOpen}
-        // onClose={setMobileMenuOpen(false)}
+        onClose={() => setMobileMenuOpen(false)}
       >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
