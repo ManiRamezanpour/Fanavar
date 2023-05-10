@@ -18,9 +18,6 @@ function App() {
         <OurTeams />
         <ContactSection />
       </MainLayout>
-      <Router>
-        Rout
-      </Router>
     </>
   );
 }

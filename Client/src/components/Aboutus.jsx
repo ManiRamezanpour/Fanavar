@@ -161,7 +161,7 @@ export default function Aboutus() {
           </div>
         </div>
         <button className="">
-          <Link to="/AboutUS">ReadMore</Link>
+          ReadMore
         </button>
       </div>
     </div>

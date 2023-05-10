@@ -5,20 +5,10 @@ import "./index.css";
 import "./configs/i18next";
 import OurEmploy from "./Pages/Employ";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/aboutUs",
-    element: <OurEmploy />,
-  },
-]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} fallbackElement={<BigSpinner />}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </RouterProvider>
+  // <RouterProvider router={router} fallbackElement={<BigSpinner />}>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+  // </RouterProvider>
 );
