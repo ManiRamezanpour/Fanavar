@@ -1,12 +1,7 @@
 import Header from "../Header";
 import { useTranslation } from "react-i18next";
 
-const links = [
-  { name: "Our sulution", href: "#" },
-  { name: "Our employe", href: "#" },
-  { name: "Our Service", href: "#" },
-  // { name: "Meet our leadership", href: "#" },
-];
+const links = [];
 export default function Landing() {
   const { t, i18n } = useTranslation();
   return (
