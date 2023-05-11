@@ -7,10 +7,18 @@ import OurTeams from "./components/Teams";
 import MainLayout from "./Layout/main";
 import { useTranslation } from "react-i18next";
 import { Router } from "react-router-dom";
-import withRoota from "./withRoot";
+import { useEffect } from "react";
+// import withRoota from "./withRoot";
 function App() {
-  const theme = useTheme();
-  document.body.dir = i18n.dir();
+  const { i18n } = useTranslation();
+  console.log(i18n.language);
+  useEffect(() => {
+    if (i18n.language === "pr") {
+      document.dir = "rtl";
+    } else {
+      document.dir = "ltr";
+    }
+  }, [i18n.language]);
   return (
     <>
       <MainLayout>
@@ -24,4 +32,4 @@ function App() {
     </>
   );
 }
-export default withRoot(App);
+export default App;
