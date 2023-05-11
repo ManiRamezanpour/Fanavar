@@ -1,19 +1,21 @@
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import * as React from "react";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "@material-ui/core/styles";
 
 export default function LanguageController() {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const handleChange = (lng) => {
+    i18n.changeLanguage(lng);
+    const theme = useTheme();
+    document.body.dir = i18n.dir();
   };
 
   return (
     <div>
-      <FormControl sx={{ m: 1, minWidth: 80 }}>
+      <FormControl className="w-20">
         <InputLabel id="demo-simple-select-autowidth-label">Lng</InputLabel>
         <Select
           labelId="demo-simple-select-autowidth-label"
@@ -23,12 +25,9 @@ export default function LanguageController() {
           autoWidth
           label="Age"
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Twenty</MenuItem>
-          <MenuItem value={21}>Twenty one</MenuItem>
-          <MenuItem value={22}>Twenty one and a half</MenuItem>
+          <MenuItem value={22}>English</MenuItem>
+          <MenuItem value={10}>French</MenuItem>
+          <MenuItem value={21}>Persian</MenuItem>
         </Select>
       </FormControl>
     </div>

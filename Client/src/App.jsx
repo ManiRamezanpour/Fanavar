@@ -7,7 +7,10 @@ import OurTeams from "./components/Teams";
 import MainLayout from "./Layout/main";
 import { useTranslation } from "react-i18next";
 import { Router } from "react-router-dom";
+import withRoota from "./withRoot";
 function App() {
+  const theme = useTheme();
+  document.body.dir = i18n.dir();
   return (
     <>
       <MainLayout>
@@ -21,4 +24,4 @@ function App() {
     </>
   );
 }
-export default App;
+export default withRoot(App);
